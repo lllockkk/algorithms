@@ -13,7 +13,7 @@ public class _06Quick {
     }
     
     public static void sort(Comparable[] a) {
-        // TODO: 2017/9/21 消除对输入的依赖 
+        // TODO: 2017/9/21 打乱a数组，消除对输入的依赖
         
         sort(a, 0, a.length - 1);
     }
@@ -26,9 +26,31 @@ public class _06Quick {
     }
 
     private static int partition(Comparable[] a, int lo, int hi) {
-        // TODO: 2017/9/21  
-        return 0;
+        int i = lo;
+        int j = hi + 1;
+        Comparable v = a[lo];
+        System.out.println(a[5].compareTo(v) >= 0);
+        while (true) {
+            while (a[++i].compareTo(v) < 0) {
+                if (i == hi)
+                    break;
+            }
+
+            while (a[--j].compareTo(v) >= 0) {
+                if (j == lo)
+                    break;
+            }
+
+            if (i >= j)
+                break;
+
+            Comparable temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+        Comparable temp = a[lo];
+        a[lo] = a[j];
+        a[j] = temp;
+        return j;
     }
-
-
 }
