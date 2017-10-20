@@ -17,8 +17,12 @@ public class _02Insertion {
 
     public static void sort(Comparable[] a) {
         int len = a.length;
-        for (int i=1; i<len; i++) {
-            for (int j=i; j>0 && a[j].compareTo(a[j-1]) < 0; j--) {
+        sort(a, 0, len - 1);
+    }
+
+    public static void sort(Comparable[] a, int lo, int hi) {
+        for (int i=lo+1; i<hi+1; i++) {
+            for (int j=i; j>lo && a[j].compareTo(a[j-1]) < 0; j--) {
                 Comparable temp = a[j];
                 a[j] = a[j-1];
                 a[j-1] = temp;
