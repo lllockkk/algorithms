@@ -13,19 +13,10 @@ import java.util.Arrays;
  */
 public class _09TopM {
     public static void main(String[] args) {
-        /*Integer[] a = {5, 4, 23, 12, 6, 5, 7, 52, 3};
+        Integer[] a = {5, 4, 23, 12, 6, 5, 7, 52, 3};
         for (int i=1; i<=a.length; i++) {
             System.out.println(heapSelect(a, i));
-        }*/
-
-
-
-        BigDecimal d = new BigDecimal(1.55505 + "");
-        /*DecimalFormat df = new DecimalFormat("#.00");
-        df.setRoundingMode(RoundingMode.HALF_UP);
-        System.out.println(df.format(d));*/
-        d = d.setScale(4, BigDecimal.ROUND_HALF_UP);
-        System.out.println(d);
+        }
     }
 
 
