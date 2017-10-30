@@ -33,28 +33,26 @@ public class _06Quick {
         int i = lo;
         int j = hi + 1;
         Comparable v = a[lo];
-        System.out.println(a[5].compareTo(v) >= 0);
         while (true) {
-            while (a[++i].compareTo(v) < 0) {
-                if (i == hi)
-                    break;
-            }
+//            while (a[++i].compareTo(v) < 0) {
+//                if (i == hi)
+//                    break;
+//            }
+//
+//            while (a[--j].compareTo(v) >= 0) {
+//                if (j == lo)
+//                    break;
+//            }
 
-            while (a[--j].compareTo(v) >= 0) {
-                if (j == lo)
-                    break;
-            }
+            while (a[++i].compareTo(v) == -1 && i < j && i < hi);
+            while (a[--j].compareTo(v) >= 0 && j > lo);
 
             if (i >= j)
                 break;
 
-            Comparable temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            exch(a, i, j);
         }
-        Comparable temp = a[lo];
-        a[lo] = a[j];
-        a[j] = temp;
+        exch(a, lo, j);
         return j;
     }
 
