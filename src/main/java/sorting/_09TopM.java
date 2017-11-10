@@ -1,12 +1,5 @@
 package sorting;
 
-import com.sun.org.apache.xpath.internal.WhitespaceStrippingElementMatcher;
-
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.util.Arrays;
-
 /**
  * 查找第M大(小)的数
  * Created by L on 2017/10/25.
@@ -18,7 +11,6 @@ public class _09TopM {
             System.out.println(heapSelect(a, i));
         }
     }
-
 
     public static Comparable partSelect(Comparable[] a, int k) {
         if (k > a.length)
@@ -58,7 +50,6 @@ public class _09TopM {
         return j;
     }
 
-
     public static Comparable heapSelect(Comparable[] a, int k) {
         if (k > a.length)
             throw new RuntimeException("k大于数组长度");
@@ -78,7 +69,6 @@ public class _09TopM {
                 pq.insert(a[i]);
             }
         }
-
         return pq.getMax();
     }
 
